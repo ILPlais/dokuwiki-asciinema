@@ -8,5 +8,5 @@
  */
 
 $lang['nosource'] = "asciinema : aucun enregistrement indiqué.";
-$lang['notfound'] = "asciinema : l\'enregistrement « %s » n\'existe pas.";
-$lang['download'] = "Télécharger l\'enregistrement asciinema";
+$lang['notfound'] = "asciinema : l'enregistrement « %s » n'existe pas.";
+$lang['download'] = "Télécharger l'enregistrement asciinema";

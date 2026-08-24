@@ -19,4 +19,4 @@ $lang['preload']         = "Fetch the recording on page load instead of on play"
 $lang['speed']           = "Playback speed, <code>2</code> meaning twice as fast";
 $lang['idle_time_limit'] = "Shorten pauses longer than this many seconds (empty or 0 to keep the original timing)";
 $lang['font_family']     = "CSS font-family override for the terminal (empty to use the stylesheet default)";
-$lang['font_size']       = "Terminal font size: <code>small</code>, <code>medium</code>, <code>big</code> or a CSS size. Only effective when "fit" is set to <code>none</code>.";
+$lang['font_size']       = "Terminal font size: <code>small</code>, <code>medium</code>, <code>big</code> or a CSS size. Only effective when \"fit\" is set to <code>none</code>.";
