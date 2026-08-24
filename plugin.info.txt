@@ -1,0 +1,7 @@
+base   asciinema
+author Lionel PLAIS
+email  lionel.plais@ilp-web.net
+date   2026-08-24
+name   asciinema plugin
+desc   Share recorded terminal sessions created with asciinema.
+url    https://www.dokuwiki.org/plugin:asciinema

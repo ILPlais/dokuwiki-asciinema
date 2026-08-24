@@ -1,0 +1,103 @@
+asciinema plugin for DokuWiki
+
+Share recorded terminal sessions created with asciinema.
+
+All documentation for this plugin can be found at
+https://www.dokuwiki.org/plugin:asciinema
+
+If you install this plugin manually, make sure it is installed in
+lib/plugins/asciinema/ - if the folder is called different it
+will not work!
+
+Please refer to http://www.dokuwiki.org/extensions for additional info
+on how to install extensions in DokuWiki.
+
+----
+SYNTAX
+
+  Local recording, played by the bundled JavaScript player:
+
+    {{asciinema>linux.cast}}
+    {{asciinema>wiki:demos:linux.cast}}
+
+  Recording hosted on an asciinema server, embedded through its own script:
+
+    {{asciinema>https://asciinema.org/a/569727}}
+
+  Recording published as a plain .cast file on another site (the remote server
+  must send CORS headers):
+
+    {{asciinema>https://example.org/casts/demo.cast}}
+
+  Alignment follows the usual DokuWiki media convention, using the spaces
+  inside the curly braces:
+
+    {{ asciinema>linux.cast}}     right
+    {{asciinema>linux.cast }}     left
+    {{ asciinema>linux.cast }}    centre
+
+  A caption can be added after a pipe:
+
+    {{asciinema>linux.cast|Booting a Linux kernel}}
+
+OPTIONS
+
+  Options are appended after a question mark and separated by "&". Flags may be
+  written on their own or with an explicit value, e.g. "autoplay" or
+  "autoplay=0".
+
+    800x400           player size, also 800, 80% or a named size:
+                      small, medium, large, half, full
+    autoplay          start playing on page load
+    loop              loop playback, loop=3 to repeat three times
+    preload           fetch the recording on page load
+    controls          always show the control bar, nocontrols to hide it
+    speed=2           playback speed
+    idle=2            shorten pauses longer than two seconds
+    start=1:30        start playback at a given time, also startat= or t=
+    theme=dracula     asciinema, dracula, gruvbox-dark, monokai, nord, seti,
+                      solarized-dark, solarized-light, tango
+    poster=npt:1:23   preview frame shown before playback
+    cols=100&rows=30  terminal dimensions
+    fit=width         width, height, both, or nofit for a fixed size font
+    fontsize=big      small, medium, big or a CSS size, needs nofit
+    font=Fira_Code    CSS font family, underscores become spaces
+    lineheight=1.5    line height relative to the font size
+    cursor=steady     blinking, steady or hidden
+    keys              show the keystroke overlay
+    pause             pause the playback on every marker
+
+  Any flag can be negated with a "no" prefix: noautoplay, noloop, nopreload,
+  nocontrols, nofit.
+
+  Recordings embedded from an asciinema server are rendered by that server, so
+  they only honour autoplay, loop, preload, speed, start, idle, theme, poster,
+  cols and rows.
+
+  Example:
+
+    {{asciinema>linux.cast?800&theme=dracula&idle=2&poster=npt:0:15|Demo}}
+
+UPLOADING RECORDINGS
+
+  The plugin registers the "cast" extension as application/x-asciicast, which
+  makes .cast files uploadable through the media manager. Turn the
+  "register_mime" option off if you would rather declare the extension yourself
+  in conf/mime.local.conf.
+
+----
+Copyright (C) Lionel PLAIS <lionel.plais@ilp-web.net>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; version 2 of the License
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+See the LICENSING file for details
+
+The bundled asciinema player (player/) is distributed under the Apache
+License 2.0, see https://github.com/asciinema/asciinema-player
